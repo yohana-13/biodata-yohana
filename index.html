@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Diri Saya ✨</title>
+    <!-- PERBAIKAN: Menambahkan font Cherry Bomb One -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Darumadrop+One&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Reset & Base Styles */
+        :root {
+            --primary-color: #c2185b;
+            --secondary-color: #e91e63;
+            --background-start: #fce4ec;
+            --background-end: #f8bbd9;
+            --text-color: #2c2c2c;
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --shadow-color: rgba(233, 30, 99, 0.1);
+            --mouse-x: 50vw;
+            --mouse-y: 50vh;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: rgba(255, 182, 193, 0.3);
+            color: var(--primary-color);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #f48fb1, #f8bbd9);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #ec407a, #f06292);
+        }
+
+        body {
+            font-family: 'Darumadrop One', cursive;
+            font-weight: 400;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--background-start), var(--background-end), #f48fb1, var(--secondary-color));
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: var(--text-color);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(600px at var(--mouse-x) var(--mouse-y), rgba(233, 30, 99, 0.15), transparent 80%);
+            pointer-events: none;
+            z-index: 0;
+            transition: background 0.0s ease-out;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            color: rgba(233, 30, 99, 0.6);
+            animation: float 12s ease-in-out infinite;
+            filter: drop-shadow(0 2px 8px rgba(233, 30, 99, 0.2));
+            bottom: -50px;
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; font-size: 1.4rem; }
+        .heart:nth-child(2) { left: 20%; animation-delay: 2.5s; font-size: 1.6rem; }
+        .heart:nth-child(3) { left: 70%; animation-delay: 5s; font-size: 1.2rem; }
+        .heart:nth-child(4) { left: 85%; animation-delay: 7.5s; font-size: 1.8rem; }
+        .heart:nth-child(5) { left: 45%; animation-delay: 10s; font-size: 1.3rem; }
+        
+        .princess-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .princess {
+            position: absolute;
+            font-size: 2.5rem;
+            animation: princess-fly 20s linear infinite;
+            opacity: 0.7;
+        }
+
+        .princess:nth-child(1) {
+            top: 20%;
+            animation-delay: 0s;
+        }
+        .princess:nth-child(2) {
+            top: 50%;
+            animation-delay: 5s;
+            font-size: 2rem;
+        }
+        .princess:nth-child(3) {
+            top: 80%;
+            animation-delay: 12s;
+            font-size: 3rem;
+        }
+
+        /* PERBAIKAN: Animasi Kupu-kupu dan Kekuatan Magis */
+        .magic-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .butterfly, .magic-sparkle {
+            position: absolute;
+            will-change: transform; /* Optimasi untuk animasi */
+        }
+
+        .butterfly {
+            font-size: 2rem;
+            animation: fly-around 15s linear infinite;
+        }
+
+        .magic-sparkle {
+            font-size: 1.5rem;
+            animation: sparkle-trail 10s linear infinite;
+        }
+
+        .butterfly:nth-child(1) { top: 10%; animation-delay: 0s; }
+        .butterfly:nth-child(2) { top: 60%; animation-delay: 5s; font-size: 2.5rem; }
+        .butterfly:nth-child(3) { top: 35%; animation-delay: 10s; }
+
+        .magic-sparkle:nth-child(4) { top: 30%; animation-delay: 2s; }
+        .magic-sparkle:nth-child(5) { top: 70%; animation-delay: 7s; font-size: 2rem; }
+        .magic-sparkle:nth-child(6) { top: 90%; animation-delay: 9s; }
+        /* AKHIR PERBAIKAN */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            z-index: 1000;
+            box-shadow: 0 4px 32px var(--shadow-color), 0 2px 16px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(255, 182, 193, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.5rem 0;
+        }
+
+        .navbar.scrolled {
+            background: var(--glass-bg);
+            box-shadow: 0 6px 40px rgba(233, 30, 99, 0.15), 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: 'Cherry Bomb One', cursive;
+            font-size: 2rem;
+            color: var(--primary-color);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        .logo-text:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 2px 8px rgba(194, 24, 91, 0.3));
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-family: 'Cherry Bomb One', cursive;
+            color: #444;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(233, 30, 99, 0.1), rgba(248, 187, 217, 0.1));
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-link:hover::before {
+            left: 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            filter: drop-shadow(0 2px 10px rgba(233, 30, 99, 0.2));
+        }
+
+        .nav-link.active {
+            background: rgba(233, 30, 99, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .nav-link .fas {
+            width: 1.2em;
+            text-align: center;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .profile-pic-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.3);
+            transition: all 0.3s ease;
+            animation: wobble 4s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(233, 30, 99, 0.4);
+            animation-play-state: paused;
+        }
+
+        .sparkle {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: sparkle 2s ease-in-out infinite;
+            pointer-events: none;
+            color: #ffeb3b;
+        }
+
+        .sparkle.s1 { top: -10px; right: -10px; }
+        .sparkle.s2 { bottom: 0; left: -15px; animation-delay: 0.5s; font-size: 1.2rem; }
+
+        .hero-title {
+            font-family: 'Rubik Bubbles', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+            animation: text-wobble 6s ease-in-out infinite;
+        }
+
+        .wave-text {
+            display: inline-block;
+            animation: wave 2s ease-in-out infinite;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), #f06292);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title .wave-text:nth-child(1) { animation-delay: 0.1s; }
+        .hero-title .wave-text:nth-child(2) { animation-delay: 0.2s; }
+        .hero-title .wave-text:nth-child(3) { animation-delay: 0.3s; }
+        .hero-title .wave-text:nth-child(4) { animation-delay: 0.4s; }
+        .hero-title .wave-text:nth-child(5) { animation-delay: 0.5s; }
+        .hero-title .wave-text:nth-child(6) { animation-delay: 0.6s; }
+        .hero-title .wave-text:nth-child(7) { animation-delay: 0.7s; }
+        .hero-title .wave-text:nth-child(8) { animation-delay: 0.8s; }
+        .hero-title .wave-text:nth-child(9) { animation-delay: 0.9s; }
+        .hero-title .wave-text:nth-child(10) { animation-delay: 1.0s; }
+        .hero-title .wave-text:nth-child(11) { animation-delay: 1.1s; }
+        .hero-title .wave-text:nth-child(12) { animation-delay: 1.2s; }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            font-size: 1.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 4px 20px rgba(194, 24, 91, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 35px rgba(194, 24, 91, 0.45);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            color: var(--primary-color);
+            border: 2px solid rgba(194, 24, 91, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(194, 24, 91, 0.1);
+            border-color: rgba(194, 24, 91, 0.4);
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Rubik Bubbles', cursive;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: text-wobble 6s ease-in-out infinite;
+        }
+
+        .about {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .text-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px var(--shadow-color);
+            border: 1px solid rgba(255, 182, 193, 0.2);
+        }
+
+        .text-box p {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 30px var(--shadow-color);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(233, 30, 99, 0.15);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .stat-number {
+            font-family: 'Rubik Bubbles', cursive;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.3rem;
+            color: #666;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 250px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-family: 'Rubik Bubbles', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skills {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px var(--shadow-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(233, 30, 99, 0.15);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .skill-item h3 {
+            font-family: 'Rubik Bubbles', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .skill-bar {
+            background: rgba(233, 30, 99, 0.1);
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            width: 0;
+            transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px var(--shadow-color);
+        }
+
+        .contact-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px var(--shadow-color);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.25);
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 182, 193, 0.2);
+            margin-top: 80px;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 1.3rem;
+        }
+
+        /* Animations */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.7; }
+            50% { transform: rotate(180deg) scale(1.2); opacity: 1; }
+        }
+
+        @keyframes wobble {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(3deg) scale(1.02); }
+            75% { transform: rotate(-3deg) scale(1.02); }
+        }
+
+        @keyframes text-wobble {
+            0%, 100% { transform: rotate(0); }
+            25% { transform: rotate(-1.5deg); }
+            75% { transform: rotate(1.5deg); }
+        }
+        
+        @keyframes princess-fly {
+            0% {
+                transform: translateX(100vw) translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateX(50vw) translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateX(-10vw) translateY(0) rotate(0deg);
+            }
+        }
+        
+        /* PERBAIKAN: Keyframe untuk animasi baru */
+        @keyframes fly-around {
+            0% { transform: translateX(100vw) translateY(0vh) rotate(0deg); opacity: 0.8; }
+            25% { transform: translateX(70vw) translateY(-15vh) rotate(20deg); }
+            50% { transform: translateX(40vw) translateY(10vh) rotate(-10deg); }
+            75% { transform: translateX(10vw) translateY(-10vh) rotate(15deg); }
+            100% { transform: translateX(-10vw) translateY(5vh) rotate(0deg); opacity: 0.8; }
+        }
+
+        @keyframes sparkle-trail {
+            0% { transform: translateX(100vw) scale(0.5); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateX(-10vw) scale(1.2); opacity: 0; }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-menu {
+                position: fixed;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 65px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            .nav-menu.active { transform: translateX(0); }
+            .nav-link { font-size: 1.8rem; }
+            .hero { padding: 100px 20px 40px; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 220px; justify-content: center; }
+            .about-stats { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 3.5rem; }
+            .hero-subtitle { font-size: 1.5rem; }
+            .profile-pic { width: 150px; height: 150px; }
+            .section-title { font-size: 3rem; }
+            .container { padding: 0 15px; }
+            .contact-content { padding: 2rem; }
+        }
+
+ </style>
+</head>
+<body>
+
+  <script>
+    // Fungsi untuk membuat hati (love) bertebaran
+    function createFloatingHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️';  // Emoji hati
+
+      // Tentukan posisi acak di layar
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = Math.random() * 2 + 2 + 's'; // Durasi animasi acak
+
+      // Menambahkan elemen hati ke body
+      document.body.appendChild(heart);
+
+      // Menghapus hati setelah animasi selesai
+      setTimeout(() => {
+        heart.remove();
+      }, 3000);  // Hati akan dihapus setelah 3 detik
+    }
+
+    // Menghasilkan hati baru setiap 300 milidetik
+    setInterval(createFloatingHeart, 300);
+  </script>
+
+</body>
+
+    </style>
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-hearts">
+        <div class="heart">💖</div>
+        <div class="heart">💝</div>
+        <div class="heart">💗</div>
+        <div class="heart">💕</div>
+        <div class="heart">✨</div>
+    </div>
+    
+    <div class="princess-animation">
+        <div class="princess">👸</div>
+        <div class="princess">👸</div>
+        <div class="princess">👸</div>
+    </div>
+    
+    <!-- PERBAIKAN: Menambahkan elemen untuk animasi baru -->
+    <div class="magic-elements">
+        <div class="butterfly">🦋</div>
+        <div class="butterfly">🦋</div>
+        <div class="butterfly">🦋</div>
+        <div class="magic-sparkle">✨</div>
+        <div class="magic-sparkle">💫</div>
+        <div class="magic-sparkle">✨</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-text">🌸 Biodata Diri</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i><span>Beranda</span></a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i><span>Tentang</span></a></li>
+                <li><a href="#gallery" class="nav-link"><i class="fas fa-images"></i><span>Hobi</span></a></li>
+                <li><a href="#skills" class="nav-link"><i class="fas fa-star"></i><span>Pendidikan</span></a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Kontak</span></a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content fade-in">
+            <div class="profile-pic-container">
+               <img src="muach.jpg" alt="Foto Profil" class="profile-pic" id="profilePic">
+                <div class="sparkle s1">✨</div>
+                <div class="sparkle s2">🌟</div>
+            </div>
+            <h1 class="hero-title" id="nameText">
+                <!-- Teks nama akan diisi oleh JavaScript -->
+            </h1>
+            <p class="hero-subtitle" id="subtitle">
+                🌟 Ilmu Komputer | 4243250050 | PSIK 24B 🌟
+            </p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">
+                    <i class="fas fa-user-circle"></i> Kenali Saya
+                </a>
+                <a href="#gallery" class="btn btn-secondary">
+                    <i class="fas fa-image"></i> Lihat Diri Saya
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">🦋 Tentang Saya</h2>
+            <div class="about-content">
+                <div class="text-box fade-in" id="aboutText">
+                    <p>Halo! Saya Yohana Kartika Marbun, ​biasa dipanggil Yohana. Seorang ​mahasiswi Ilmu Komputer dari ​Universitas Negeri Medan. 🌈</p>
+                    <p>Saya percaya bahwa desain yang baik adalah perpaduan antara estetika dan kegunaan. Di luar kegiatan kuliah, saya suka menjelajahi tempat baru dan membaca buku fiksi. ✨</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item fade-in">
+                        <div class="stat-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="stat-number">20 Tahun</div>
+                        <div class="stat-label">Usia</div>
+	                    </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-icon"><i class="fas fa-mug-hot"></i></div>
+                        <div class="stat-number">Berastagi</div>
+                        <div class="stat-label">Asal Kota</div>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-icon"><i class="fas fa-smile-beam"></i></div>
+                        <div class="stat-number">Jalan Pendidikan</div>
+                        <div class="stat-label">Alamat</div>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-icon"><i class="fas fa-code"></i></div>
+                        <div class="stat-number">html</div>
+                        <div class="stat-label">Pemula dalam Coding</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title fade-in">📸 Hobi Saya</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="membaca.jpg" alt="Projek 1">
+                    <div class="gallery-overlay">
+                        <h3>Membaca</h3>
+                        <p>Membaca dapat membuat saya merasa terhibur.</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="poto.jpg" alt="Projek 2">
+                    <div class="gallery-overlay">
+                        <h3>Fotografi</h3>
+                        <p>Mengambil foto yang saya rasa indah.</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="ngemil.jpg" alt="Projek 3">
+                    <div class="gallery-overlay">
+                        <h3>Ngemil</h3>
+                        <p>Perut kenyang, hati bahagia.</p>
+                    </div>
+                </div>
+                 <div class="gallery-item fade-in">
+                    <img src="mekapp.jpg" alt="Projek 4">
+			
+                    <div class="gallery-overlay">
+                        <h3>Make Up</h3>
+                        <p>Memperindah karya Tuhan.</p>
+                    </div>
+ 		</div>
+                <div class="gallery-item fade-in">
+                    <img src="fotografi2.jpg" alt="Projek 5">
+                    <div class="gallery-overlay">
+                        <h3>Traveling</h3>
+                        <p>Menyegarkan pikiran yang suntuk.</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="renjun2.jpg" alt="Projek 6">
+                    <div class="gallery-overlay">
+                        <h3>Kpop</h3>
+                        <p>Menambah semangat di sela-sela kegiatan saya.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title fade-in">✨ Masa Pendidikan</h2>
+            <div class="skills-grid">
+                <div class="skill-item fade-in">
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <h3>SD</h3>
+                     <div class="stat-label">SDS Trinity Berastagi</div>
+                        <div class="stat-number">2011-2017</div>
+                </div>
+                <div class="skill-item fade-in">
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <h3>SMP</h3>
+                     <div class="stat-label">SMPS Trinity Berastagi</div>
+                        <div class="stat-number">2017-2020</div>  </div>
+                <div class="skill-item fade-in">
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <h3>SMA</h3>
+                    <div class="stat-label">SMAS Masehi Berastagi</div>
+                        <div class="stat-number">2020-2023</div>  </div>
+                <div class="skill-item fade-in">
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <h3>Kuliah</h3>
+                     <div class="stat-label">UNIMED</div>
+                        <div class="stat-number">2024-Sekarang</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content fade-in">
+                <h2 class="section-title">💌 Hubungi Saya</h2>
+                <p>Ayo berteman dengan aku di social media!</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/yohana23._?igsh=aWg1NDVwMTdrYzZt" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/yohana-13" class="social-link" aria-label="Github"><i class="fab fa-github"></i></a>
+                    <a href="https://wa.me/6283862639851" class="social-link" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=yohaanaa73@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Dibuat dengan 💖 oleh Yohana Kartika</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- KONFIGURASI ---
+            const portfolioConfig = {
+                name: "yohana Kartika Marbun",
+            };
+
+            // --- FUNGSI UTAMA ---
+
+            // Efek mengetik untuk nama di hero section
+            const nameTextElement = document.getElementById('nameText');
+            const name = portfolioConfig.name;
+            let nameIndex = 0;
+
+            function typeName() {
+                if (nameIndex < name.length) {
+                    const char = name.charAt(nameIndex);
+                    const span = document.createElement('span');
+                    span.className = 'wave-text';
+                    span.textContent = char;
+                    if (char === ' ') {
+                        span.style.padding = '0 0.1em';
+                    }
+                    nameTextElement.appendChild(span);
+                    nameIndex++;
+                    setTimeout(typeName, 100);
+                }
+            }
+            typeName();
+
+            // Navbar & Hamburger
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navbar = document.querySelector('.navbar');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Efek scroll pada Navbar
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Active link on scroll
+            const sections = document.querySelectorAll('section[id]');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.6
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Animasi skill bar saat terlihat
+            const skillBars = document.querySelectorAll('.skill-progress');
+            const skillObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        bar.style.width = bar.dataset.width;
+                        observer.unobserve(bar);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillBars.forEach(bar => {
+                skillObserver.observe(bar);
+            });
+            
+            // Animasi fade-in untuk elemen
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const fadeObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                fadeObserver.observe(el);
+            });
+
+            // Menambahkan listener untuk background interaktif
+            window.addEventListener('mousemove', e => {
+                document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
+                document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
+            });
+ 
+   
+
+
+            // Update tahun di footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
